@@ -1,0 +1,112 @@
+# Liste des Musées de Paris
+
+## Grands Musées Nationaux
+
+1. Musée du Louvre - Plus grand musée d'art au monde, collections universelles
+2. Musée d'Orsay - Art du XIXe siècle, impressionnisme et post-impressionnisme
+3. Centre Pompidou - Art moderne et contemporain (XXe-XXIe siècles)
+4. Musée de l'Orangerie - Nymphéas de Monet et impressionnistes
+5. Grand Palais - Expositions temporaires majeures
+6. Petit Palais - Musée des Beaux-Arts de la Ville de Paris
+7. Palais de Tokyo - Art contemporain et création actuelle
+
+## Musées d'Art
+
+8. Musée Rodin - Sculptures d'Auguste Rodin
+9. Musée Picasso - Œuvres de Pablo Picasso
+10. Musée Marmottan Monet - Plus grande collection Monet
+11. Musée Jacquemart-André - Collection privée, art Renaissance
+12. Musée de l'Art Moderne de Paris - Art moderne, collections municipales
+13. Musée Delacroix - Atelier et œuvres d'Eugène Delacroix
+14. Musée Gustave Moreau - Maison-atelier du peintre symboliste
+15. Musée Zadkine - Sculptures d'Ossip Zadkine
+16. Musée Bourdelle - Sculptures d'Antoine Bourdelle
+17. Fondation Louis Vuitton - Art moderne et contemporain
+18. Bourse de Commerce - Pinault Collection - Art contemporain
+19. Musée de Montmartre - Histoire artistique de Montmartre
+20. Espace Dalí - Œuvres de Salvador Dalí
+
+## Musées d'Histoire et Civilisations
+
+21. Musée Carnavalet - Histoire de Paris
+22. Musée de Cluny (Musée National du Moyen Âge) - Art médiéval
+23. Musée du quai Branly - Jacques Chirac - Arts d'Afrique, Asie, Océanie, Amériques
+24. Musée de l'Homme - Anthropologie et préhistoire
+25. Musée Guimet - Arts asiatiques
+26. Institut du Monde Arabe - Culture et art arabes
+27. Musée d'Art et d'Histoire du Judaïsme - Histoire et culture juives
+28. Mémorial de la Shoah - Mémoire de la déportation
+29. Musée de la Libération de Paris - Leclerc - Moulin - Seconde Guerre mondiale
+30. Musée de l'Armée (Invalides) - Histoire militaire française
+31. Musée de la Marine - Histoire navale française
+32. Musée des Plans-Reliefs - Maquettes historiques de villes fortifiées
+33. Musée de l'Ordre de la Libération - Compagnons de la Libération
+34. Catacombes de Paris - Ossuaire municipal souterrain
+
+## Musées Sciences et Techniques
+
+35. Cité des Sciences et de l'Industrie - Sciences et technologies interactives
+36. Palais de la Découverte - Sciences fondamentales
+37. Musée des Arts et Métiers - Histoire des techniques et inventions
+38. Musée Curie - Histoire de la radioactivité
+
+## Musées Thématiques Spécialisés
+
+39. Musée Grévin - Musée de cire
+40. Musée de la Magie - Histoire de l'illusionnisme
+41. Musée des Égouts de Paris - Système d'assainissement parisien
+42. Musée du Parfum Fragonard - Histoire de la parfumerie
+43. Musée de la Mode de Paris (Palais Galliera) - Mode et costume
+44. Musée des Arts Décoratifs - Arts décoratifs et design
+45. Musée de la Publicité - Histoire de la publicité
+46. Musée du Vin - Histoire viticole
+47. Musée de la Chasse et de la Nature - Art animalier et cynégétique
+48. Musée des Lunettes et Lorgnettes - Histoire de l'optique
+49. Musée du Jouet de Paris - Collections de jouets anciens
+50. Musée de la Poupée - Poupées anciennes
+51. Musée de la Contrefaçon - Lutte anti-contrefaçon
+52. Musée de la Poste - Histoire postale
+53. Musée de la Monnaie de Paris - Numismatique et médailles
+54. Musée des Instruments de Musique (Philharmonie) - Instruments du monde
+55. Musée du Cinéma (Cinémathèque française) - Histoire du 7e art
+56. Musée de Radio France - Histoire de la radiodiffusion
+57. Musée du Chocolat - Histoire du chocolat
+58. Musée Édith Piaf - Hommage à la chanteuse
+59. Musée de l'Éventail - Collection d'éventails
+60. Musée du Barreau de Paris - Histoire de la justice
+
+## Maisons d'Écrivains et Personnalités
+
+61. Maison de Victor Hugo - Place des Vosges
+62. Maison de Balzac - Passy
+63. Musée de la Vie Romantique - Maison Scheffer-Renan
+64. Musée Nissim de Camondo - Demeure et arts décoratifs XVIIIe
+
+## Musées de Plein Air et Parcs
+
+65. Musée en Herbe - Art pour enfants
+66. Musée de Sculpture en Plein Air - Quai Saint-Bernard
+
+## Fondations et Espaces d'Art
+
+67. Fondation Cartier - Art contemporain
+68. Maison Européenne de la Photographie - Photographie contemporaine
+69. Jeu de Paume - Photographie et images
+70. Fondation Henri Cartier-Bresson - Photographie
+71. Atelier des Lumières - Art numérique immersif
+72. Musée Yves Saint Laurent Paris - Mode et haute couture
+
+## Autres Lieux Culturels
+
+73. Panthéon - Monument et nécropole nationale
+74. Conciergerie - Prison révolutionnaire
+75. Sainte-Chapelle - Vitraux gothiques
+76. Crypte archéologique de l'île de la Cité - Vestiges antiques
+77. Tours de Notre-Dame - Vue panoramique et chimères
+78. Arc de Triomphe - Monument et musée
+79. Château de Versailles (proche Paris) - Résidence royale
+
+---
+Total: Plus de 130 musées référencés dans Paris intra-muros
+
+

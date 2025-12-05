@@ -1,0 +1,139 @@
+# Artify - Daily Event Scraping Workflow
+# Runs every day at 02:00 Paris time to collect fresh events
+
+name: Daily Event Scraping
+
+on:
+  # Run daily at 02:00 Paris time (01:00 UTC in winter, 00:00 UTC in summer)
+  schedule:
+    - cron: '0 1 * * *'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: 'Sources to scrape (comma-separated, or "all")'
+        required: false
+        default: 'all'
+      dry_run:
+        description: 'Dry run (no database changes)'
+        required: false
+        type: boolean
+        default: false
+
+env:
+  PYTHON_VERSION: '3.11'
+  TZ: 'Europe/Paris'
+
+jobs:
+  scrape:
+    name: Scrape Paris Events
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+      
+      - name: Install Playwright browsers
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+      
+      - name: Set up environment
+        run: |
+          # Create .env file from secrets
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+        if: ${{ !github.event.inputs.dry_run }}
+      
+      - name: Run ingestion pipeline
+        run: |
+          # Determine sources
+          SOURCES="${{ github.event.inputs.sources || 'all' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run }}"
+          
+          # Build command
+          CMD="python -m backend.ingest"
+          
+          if [ "$SOURCES" != "all" ]; then
+            CMD="$CMD --source $SOURCES"
+          fi
+          
+          if [ "$DRY_RUN" = "true" ]; then
+            CMD="$CMD --dry-run"
+          fi
+          
+          echo "Running: $CMD"
+          $CMD
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      
+      - name: Upload database artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: events-database
+          path: real_events.db
+          retention-days: 7
+        if: ${{ !github.event.inputs.dry_run }}
+      
+      - name: Commit database changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add real_events.db
+          git diff --staged --quiet || git commit -m "📊 Daily events update - $(date +'%Y-%m-%d')"
+          git push
+        if: ${{ !github.event.inputs.dry_run && github.ref == 'refs/heads/main' }}
+      
+      - name: Generate stats report
+        run: |
+          python -c "
+          from backend.core.db import EventsDB
+          db = EventsDB()
+          stats = db.get_statistics()
+          print('📊 Database Statistics:')
+          print(f'  Total events: {stats[\"total_events\"]}')
+          print(f'  Free events: {stats[\"free_events\"]}')
+          print(f'  With ticket URL: {stats[\"with_ticket_url\"]}')
+          print(f'  Upcoming (30 days): {stats[\"upcoming_30_days\"]}')
+          print('  By category:')
+          for cat, count in stats['by_category'].items():
+              print(f'    {cat}: {count}')
+          "
+      
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::Daily scraping failed! Check the logs for details."
+
+  # Optional: Deploy to Supabase
+  # deploy:
+  #   name: Deploy to Supabase
+  #   needs: scrape
+  #   runs-on: ubuntu-latest
+  #   if: ${{ github.ref == 'refs/heads/main' && !github.event.inputs.dry_run }}
+  #   
+  #   steps:
+  #     - name: Download database
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: events-database
+  #     
+  #     - name: Sync to Supabase
+  #       run: |
+  #         # Add Supabase sync script here
+  #         echo "Syncing to Supabase..."
+  #       env:
+  #         SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  #         SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+
