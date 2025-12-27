@@ -56,3 +56,6 @@ scraping_log.txt
 *.tmp
 *.temp
 
+
+# Auto Claude data directory
+.auto-claude/
