@@ -1,0 +1,2 @@
+"""Artify backend package"""
+

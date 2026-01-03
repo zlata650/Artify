@@ -1,0 +1,2 @@
+"""Scrapers module for Artify"""
+
